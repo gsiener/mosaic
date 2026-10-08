@@ -6,91 +6,44 @@ fileprivate let alt = NSEvent.ModifierFlags.option.rawValue
 fileprivate let ctrl = NSEvent.ModifierFlags.control.rawValue
 fileprivate let cmd = NSEvent.ModifierFlags.command.rawValue
 
-enum WindowAction: Int {
-    case moveLeft = 0,
-    moveRight = 1,
-    moveUp = 2,
-    moveDown = 3,
-    maximize = 4,
-    center = 5,
-    switchDisplay = 6
-
+// The raw value is the user defaults key MASShortcut stores each shortcut under.
+enum WindowAction: String, CaseIterable {
     // Order matters here - it's used in the menu
-    static let active = [moveLeft, moveRight, moveUp, moveDown, maximize, center, switchDisplay]
-    
-    // Determines where separators should be used in the menu
-    var firstInGroup: Bool {
-        switch self {
-        case .moveLeft, .maximize, .switchDisplay:
-            return true
-        default:
-            return false
-        }
+    case moveLeft,
+    moveRight,
+    moveUp,
+    moveDown,
+    maximize,
+    center,
+    switchDisplay
+
+    static let active = allCases
+
+    private struct Descriptor {
+        let displayName: String
+        let shortcut: Shortcut
+        let imageName: String
+        // Determines where separators should be used in the menu
+        var firstInGroup = false
     }
-    
-    var name: String {
+
+    private var descriptor: Descriptor {
         switch self {
-        case .moveLeft: return "moveLeft"
-        case .moveRight: return "moveRight"
-        case .moveUp: return "moveUp"
-        case .moveDown: return "moveDown"
-        case .maximize: return "maximize"
-        case .center: return "center"
-        case .switchDisplay: return "switchDisplay"
+        case .moveLeft: return Descriptor(displayName: "Move Left", shortcut: Shortcut(cmd|alt|ctrl, kVK_LeftArrow), imageName: "moveLeftTemplate", firstInGroup: true)
+        case .moveRight: return Descriptor(displayName: "Move Right", shortcut: Shortcut(cmd|alt|ctrl, kVK_RightArrow), imageName: "moveRightTemplate")
+        case .moveUp: return Descriptor(displayName: "Move Up", shortcut: Shortcut(cmd|alt|ctrl, kVK_UpArrow), imageName: "moveUpTemplate")
+        case .moveDown: return Descriptor(displayName: "Move Down", shortcut: Shortcut(cmd|alt|ctrl, kVK_DownArrow), imageName: "moveDownTemplate")
+        case .maximize: return Descriptor(displayName: "Maximize", shortcut: Shortcut(cmd|alt|ctrl, kVK_ANSI_M), imageName: "maximizeTemplate", firstInGroup: true)
+        case .center: return Descriptor(displayName: "Center", shortcut: Shortcut(cmd|alt|ctrl, kVK_ANSI_C), imageName: "centerTemplate")
+        case .switchDisplay: return Descriptor(displayName: "Switch Display", shortcut: Shortcut(cmd|alt|ctrl, kVK_Space), imageName: "nextDisplayTemplate", firstInGroup: true)
         }
     }
 
-    var displayName: String {
-        switch self {
-        case .maximize:
-            return "Maximize"
-        case .switchDisplay:
-            return "Switch Display"
-        case .center:
-            return "Center"
-        case .moveLeft:
-            return "Move Left"
-        case .moveRight:
-            return "Move Right"
-        case .moveUp:
-            return "Move Up"
-        case .moveDown:
-            return "Move Down"
-        }
-    }
-    
-    var isMoveToDisplay: Bool {
-        return self == .switchDisplay
-    }
-    
-    var resizes: Bool {
-        return self != .switchDisplay
-    }
-    
-    var keybindingDefaults: Shortcut {
-        switch self {
-        case .moveLeft: return Shortcut( cmd|alt|ctrl, kVK_LeftArrow )
-        case .moveRight: return Shortcut( cmd|alt|ctrl, kVK_RightArrow )
-        case .moveUp: return Shortcut( cmd|alt|ctrl, kVK_UpArrow )
-        case .moveDown: return Shortcut( cmd|alt|ctrl, kVK_DownArrow )
-        case .maximize: return Shortcut( cmd|alt|ctrl, kVK_ANSI_M )
-        case .center: return Shortcut( cmd|alt|ctrl, kVK_ANSI_C )
-        case .switchDisplay: return Shortcut( cmd|alt|ctrl, kVK_Space )
-        }
-    }
-    
-    
-    var image: NSImage {
-        switch self {
-        case .moveLeft: return NSImage(imageLiteralResourceName: "moveLeftTemplate")
-        case .moveRight: return NSImage(imageLiteralResourceName: "moveRightTemplate")
-        case .moveUp: return NSImage(imageLiteralResourceName: "moveUpTemplate")
-        case .moveDown: return NSImage(imageLiteralResourceName: "moveDownTemplate")
-        case .center: return NSImage(imageLiteralResourceName: "centerTemplate")
-        case .maximize: return NSImage(imageLiteralResourceName: "maximizeTemplate")
-        case .switchDisplay: return NSImage(imageLiteralResourceName: "nextDisplayTemplate")
-        }
-    }
+    var name: String { rawValue }
+    var displayName: String { descriptor.displayName }
+    var keybindingDefaults: Shortcut { descriptor.shortcut }
+    var firstInGroup: Bool { descriptor.firstInGroup }
+    var image: NSImage { NSImage(imageLiteralResourceName: descriptor.imageName) }
 }
 
 struct Shortcut {
@@ -100,9 +53,5 @@ struct Shortcut {
     init(_ modifierFlags: UInt, _ keyCode: Int) {
         self.keyCode = keyCode
         self.modifierFlags = modifierFlags
-    }
-    
-    var dict: [String: UInt] {
-        return ["keyCode": UInt(keyCode), "modifierFlags": modifierFlags]
     }
 }
