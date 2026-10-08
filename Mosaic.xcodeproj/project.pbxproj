@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19A748E82BF982BD3072D351 /* Pods_Mosaic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D930316BB458B35951AE48F1 /* Pods_Mosaic.framework */; };
-		23BA2685FFF1ED857E8AB8E4 /* Pods_MosaicLauncher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BF98D01DA95ADFF08D99FD /* Pods_MosaicLauncher.framework */; };
 		9821403F22B3EBD900ABFB3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9821403E22B3EBD900ABFB3F /* AppDelegate.swift */; };
 		9821404322B3EBDA00ABFB3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9821404222B3EBDA00ABFB3F /* Assets.xcassets */; };
 		9821404622B3EBDA00ABFB3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9821404422B3EBDA00ABFB3F /* Main.storyboard */; };
@@ -24,6 +22,7 @@
 		9824703D22B13C7E0037B409 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9824703C22B13C7E0037B409 /* Window.swift */; };
 		9824703F22B13FBC0037B409 /* ScreenDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9824703E22B13FBC0037B409 /* ScreenDetection.swift */; };
 		9824704122B186D00037B409 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9824704022B186D00037B409 /* WindowManager.swift */; };
+		98AA000000000000000000A1 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 98AA000000000000000000A2 /* MASShortcut */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,12 +39,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0796D218CC3C7CD563827A8D /* Pods-RectangleLauncher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RectangleLauncher.release.xcconfig"; path = "Target Support Files/Pods-RectangleLauncher/Pods-RectangleLauncher.release.xcconfig"; sourceTree = "<group>"; };
-		14BF98D01DA95ADFF08D99FD /* Pods_MosaicLauncher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MosaicLauncher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		267FB01A8AADAE07B8067ADD /* Pods-Mosaic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosaic.release.xcconfig"; path = "Target Support Files/Pods-Mosaic/Pods-Mosaic.release.xcconfig"; sourceTree = "<group>"; };
-		45A699541D2DD6714CD74E40 /* Pods-MosaicLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MosaicLauncher.debug.xcconfig"; path = "Target Support Files/Pods-MosaicLauncher/Pods-MosaicLauncher.debug.xcconfig"; sourceTree = "<group>"; };
-		53A6B6ACF05CD88EB34E0D00 /* Pods-Rectangle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rectangle.debug.xcconfig"; path = "Target Support Files/Pods-Rectangle/Pods-Rectangle.debug.xcconfig"; sourceTree = "<group>"; };
-		80B094EEF6AE857D468B639A /* Pods-RectangleLauncher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RectangleLauncher.debug.xcconfig"; path = "Target Support Files/Pods-RectangleLauncher/Pods-RectangleLauncher.debug.xcconfig"; sourceTree = "<group>"; };
 		9808018523D05C0B0077774A /* MosaicRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MosaicRelease.entitlements; sourceTree = "<group>"; };
 		9808018623D05C1F0077774A /* MosaicLauncherRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MosaicLauncherRelease.entitlements; sourceTree = "<group>"; };
 		9821403C22B3EBD900ABFB3F /* MosaicLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MosaicLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,13 +61,6 @@
 		9824703C22B13C7E0037B409 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		9824703E22B13FBC0037B409 /* ScreenDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenDetection.swift; sourceTree = "<group>"; };
 		9824704022B186D00037B409 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
-		BEC31C8B34ECBC4B4E62F8F1 /* Pods-Mosaic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mosaic.debug.xcconfig"; path = "Target Support Files/Pods-Mosaic/Pods-Mosaic.debug.xcconfig"; sourceTree = "<group>"; };
-		BFFF93EBEA6E2FF7245A7CF5 /* Pods-Rectangle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rectangle.release.xcconfig"; path = "Target Support Files/Pods-Rectangle/Pods-Rectangle.release.xcconfig"; sourceTree = "<group>"; };
-		D930316BB458B35951AE48F1 /* Pods_Mosaic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mosaic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE4AE568B8BDB98BF602D588 /* Pods-RectangleMAS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RectangleMAS.release.xcconfig"; path = "Target Support Files/Pods-RectangleMAS/Pods-RectangleMAS.release.xcconfig"; sourceTree = "<group>"; };
-		E2625F45B180F733E8508494 /* Pods-RectangleMAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RectangleMAS.debug.xcconfig"; path = "Target Support Files/Pods-RectangleMAS/Pods-RectangleMAS.debug.xcconfig"; sourceTree = "<group>"; };
-		E307050C5DA74EE250A03AEF /* Pods-MosaicLauncher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MosaicLauncher.release.xcconfig"; path = "Target Support Files/Pods-MosaicLauncher/Pods-MosaicLauncher.release.xcconfig"; sourceTree = "<group>"; };
-		F4F1FB66CBFB958E8BB16DCD /* Pods_RectangleMAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RectangleMAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23BA2685FFF1ED857E8AB8E4 /* Pods_MosaicLauncher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,30 +76,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9821405E22B3ED3600ABFB3F /* ServiceManagement.framework in Frameworks */,
-				19A748E82BF982BD3072D351 /* Pods_Mosaic.framework in Frameworks */,
+				98AA000000000000000000A1 /* MASShortcut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67F292BA10681FCA82000D3E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				53A6B6ACF05CD88EB34E0D00 /* Pods-Rectangle.debug.xcconfig */,
-				BFFF93EBEA6E2FF7245A7CF5 /* Pods-Rectangle.release.xcconfig */,
-				80B094EEF6AE857D468B639A /* Pods-RectangleLauncher.debug.xcconfig */,
-				0796D218CC3C7CD563827A8D /* Pods-RectangleLauncher.release.xcconfig */,
-				E2625F45B180F733E8508494 /* Pods-RectangleMAS.debug.xcconfig */,
-				DE4AE568B8BDB98BF602D588 /* Pods-RectangleMAS.release.xcconfig */,
-				BEC31C8B34ECBC4B4E62F8F1 /* Pods-Mosaic.debug.xcconfig */,
-				267FB01A8AADAE07B8067ADD /* Pods-Mosaic.release.xcconfig */,
-				45A699541D2DD6714CD74E40 /* Pods-MosaicLauncher.debug.xcconfig */,
-				E307050C5DA74EE250A03AEF /* Pods-MosaicLauncher.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		9821403D22B3EBD900ABFB3F /* MosaicLauncher */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,9 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				9821405D22B3ED3600ABFB3F /* ServiceManagement.framework */,
-				F4F1FB66CBFB958E8BB16DCD /* Pods_RectangleMAS.framework */,
-				D930316BB458B35951AE48F1 /* Pods_Mosaic.framework */,
-				14BF98D01DA95ADFF08D99FD /* Pods_MosaicLauncher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,7 +111,6 @@
 				9821403D22B3EBD900ABFB3F /* MosaicLauncher */,
 				9824700A22AF9B7D0037B409 /* Products */,
 				9821405C22B3ED3600ABFB3F /* Frameworks */,
-				67F292BA10681FCA82000D3E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,7 +150,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9821405422B3EBDA00ABFB3F /* Build configuration list for PBXNativeTarget "MosaicLauncher" */;
 			buildPhases = (
-				29FB3DDD8496454008602727 /* [CP] Check Pods Manifest.lock */,
 				9821403822B3EBD900ABFB3F /* Sources */,
 				9821403922B3EBD900ABFB3F /* Frameworks */,
 				9821403A22B3EBD900ABFB3F /* Resources */,
@@ -204,18 +167,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9824702422AF9B7E0037B409 /* Build configuration list for PBXNativeTarget "Mosaic" */;
 			buildPhases = (
-				E6D791631A87C2748EF5183E /* [CP] Check Pods Manifest.lock */,
 				9824700522AF9B7D0037B409 /* Sources */,
 				9824700622AF9B7D0037B409 /* Frameworks */,
 				9824700722AF9B7D0037B409 /* Resources */,
 				9821405A22B3EC9900ABFB3F /* CopyFiles */,
-				28805C67730FCF221CAEF5FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Mosaic;
+			packageProductDependencies = (
+				98AA000000000000000000A2 /* MASShortcut */,
+			);
 			productName = Rectangle;
 			productReference = 9824700922AF9B7D0037B409 /* Mosaic.app */;
 			productType = "com.apple.product-type.application";
@@ -255,7 +219,7 @@
 				};
 			};
 			buildConfigurationList = 9824700422AF9B7D0037B409 /* Build configuration list for PBXProject "Mosaic" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -263,6 +227,9 @@
 				Base,
 			);
 			mainGroup = 9824700022AF9B7D0037B409;
+			packageReferences = (
+				98AA000000000000000000A3 /* XCRemoteSwiftPackageReference "MASShortcut" */,
+			);
 			productRefGroup = 9824700A22AF9B7D0037B409 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,70 +260,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		28805C67730FCF221CAEF5FA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mosaic/Pods-Mosaic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mosaic/Pods-Mosaic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mosaic/Pods-Mosaic-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29FB3DDD8496454008602727 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MosaicLauncher-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E6D791631A87C2748EF5183E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Mosaic-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9821403822B3EBD900ABFB3F /* Sources */ = {
@@ -406,7 +309,6 @@
 /* Begin XCBuildConfiguration section */
 		9821405522B3EBDA00ABFB3F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45A699541D2DD6714CD74E40 /* Pods-MosaicLauncher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MosaicLauncher/MosaicLauncher.entitlements;
@@ -420,7 +322,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onsi.MosaicLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,7 +334,6 @@
 		};
 		9821405622B3EBDA00ABFB3F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E307050C5DA74EE250A03AEF /* Pods-MosaicLauncher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MosaicLauncher/MosaicLauncherRelease.entitlements;
@@ -446,7 +347,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onsi.MosaicLauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -508,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -565,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -576,7 +477,6 @@
 		};
 		9824702522AF9B7E0037B409 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEC31C8B34ECBC4B4E62F8F1 /* Pods-Mosaic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mosaic/Mosaic.entitlements;
@@ -591,7 +491,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onsi.mosaic;
@@ -603,7 +503,6 @@
 		};
 		9824702622AF9B7E0037B409 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 267FB01A8AADAE07B8067ADD /* Pods-Mosaic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Mosaic/MosaicRelease.entitlements;
@@ -618,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.onsi.mosaic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -658,6 +557,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98AA000000000000000000A3 /* XCRemoteSwiftPackageReference "MASShortcut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shpakovski/MASShortcut";
+			requirement = {
+				kind = revision;
+				revision = 6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98AA000000000000000000A2 /* MASShortcut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98AA000000000000000000A3 /* XCRemoteSwiftPackageReference "MASShortcut" */;
+			productName = MASShortcut;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9824700122AF9B7D0037B409 /* Project object */;
 }
