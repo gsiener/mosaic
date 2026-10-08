@@ -16,15 +16,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                                 selector: #selector(self.terminate),
                                                                 name: killNotification,
                                                                 object: mainAppIdentifier)
-            let path = Bundle.main.bundlePath as NSString
-            var components = path.pathComponents
-            components.removeLast()
-            components.removeLast()
-            components.removeLast()
-            components.append("MacOS")
-            components.append("Mosaic")
-            let newPath = NSString.path(withComponents: components)
-            NSWorkspace.shared.launchApplication(newPath)
+            // MosaicLauncher.app lives at Mosaic.app/Contents/Library/LoginItems/
+            let mainAppURL = Bundle.main.bundleURL
+                .deletingLastPathComponent()
+                .deletingLastPathComponent()
+                .deletingLastPathComponent()
+                .deletingLastPathComponent()
+            NSWorkspace.shared.openApplication(at: mainAppURL, configuration: NSWorkspace.OpenConfiguration())
         }
     }
     
