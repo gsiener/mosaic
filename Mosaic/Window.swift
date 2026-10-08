@@ -269,8 +269,10 @@ class Window {
             }
             
             let matchingWindows = windowsOfSameApp.filter { (infoDict) -> Bool in
-                if let bounds = infoDict[kCGWindowBounds as String] as? [String: CGFloat] {
-                    return bounds["X"] == rect.origin.x && bounds["Y"] == rect.origin.y && bounds["Height"] == rect.height && bounds["Width"] == rect.width
+                if let boundsDict = infoDict[kCGWindowBounds as String] as? NSDictionary,
+                    let bounds = CGRect(dictionaryRepresentation: boundsDict) {
+                    // AX and CGWindowList frames can disagree by a fraction of a point
+                    return bounds.closeTo(rect, tolerance: 1.0)
                 }
                 return false
             }
