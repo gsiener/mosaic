@@ -18,10 +18,6 @@ enum WindowAction: Int {
     // Order matters here - it's used in the menu
     static let active = [moveLeft, moveRight, moveUp, moveDown, maximize, center, switchDisplay]
     
-    func post() {
-        NotificationCenter.default.post(name: notificationName, object: self)
-    }
-        
     // Determines where separators should be used in the menu
     var firstInGroup: Bool {
         switch self {
@@ -61,10 +57,6 @@ enum WindowAction: Int {
         case .moveDown:
             return "Move Down"
         }
-    }
-    
-    var notificationName: Notification.Name {
-        return Notification.Name(name)
     }
     
     var isMoveToDisplay: Bool {

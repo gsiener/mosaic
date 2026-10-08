@@ -8,12 +8,13 @@ class ShortcutManager {
         self.windowManager = windowManager
         registerDefaults()
         bindShortcuts()
-        subscribeAll(selector: #selector(windowActionTriggered))
     }
     
     public func bindShortcuts() {
         for action in WindowAction.active {
-            MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: action.name, toAction: action.post)
+            MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: action.name) { [weak self] in
+                self?.windowManager.execute(action)
+            }
         }
     }
     
@@ -28,10 +29,6 @@ class ShortcutManager {
         return (masShortcut.keyCodeStringForKeyEquivalent, masShortcut.modifierFlags)
     }
     
-    deinit {
-        unsubscribe()
-    }
-    
     private func registerDefaults() {
         let defaultShortcuts = WindowAction.active.reduce(into: [String: MASShortcut]()) { dict, windowAction in
             let shortcut = MASShortcut(keyCode: windowAction.keybindingDefaults.keyCode,
@@ -40,24 +37,5 @@ class ShortcutManager {
         }
         
         MASShortcutBinder.shared()?.registerDefaultShortcuts(defaultShortcuts)
-    }
-    
-    @objc func windowActionTriggered(notification: NSNotification) {
-        guard let action = notification.object as? WindowAction else { return }
-        windowManager.execute(action)
-    }
-    
-    private func subscribe(notification: WindowAction, selector: Selector) {
-        NotificationCenter.default.addObserver(self, selector: selector, name: notification.notificationName, object: nil)
-    }
-    
-    private func unsubscribe() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    private func subscribeAll(selector: Selector) {
-        for windowAction in WindowAction.active {
-            subscribe(notification: windowAction, selector: selector)
-        }
     }
 }
