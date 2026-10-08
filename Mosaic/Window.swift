@@ -2,8 +2,6 @@ import Foundation
 import Carbon
 import Cocoa
 
-let DEBUG = false
-
 typealias WindowId = Int
 
 struct WindowEvent : CustomStringConvertible {
@@ -27,9 +25,8 @@ class Window {
         self.screens = screens
     }
     
-    static func frontmostWindow() -> Window? {
-        guard let frontmostApplication: NSRunningApplication = NSWorkspace.shared.frontmostApplication,
-            let screens = Screens.detect() else { return nil }
+    static func frontmostWindow(screens: Screens) -> Window? {
+        guard let frontmostApplication: NSRunningApplication = NSWorkspace.shared.frontmostApplication else { return nil }
         let axApplication = AXUIElementCreateApplication(frontmostApplication.processIdentifier)
         let focusedAttr = NSAccessibility.Attribute.focusedWindow as CFString
         var copiedUnderlyingElement: AnyObject?
@@ -43,47 +40,12 @@ class Window {
         return nil
     }
     
-    func execute(_ action: WindowAction, previousEvent: WindowEvent?) -> WindowEvent? {
-        if self.isSheet() || self.isSystemDialog() || self.rect().isNull {
-            return nil
-        }
-        
-        guard let id = self.getIdentifier() else {
-            return nil
-        }
-        
-        guard let screen = self.screens.screenContaining(self) else {
-            return nil
-        }
-
-        var windowEvent = WindowEvent(id: id)
-        windowEvent.previous = self.normalizedRect(in: screen)
-        
-        windowEvent.target = Layout.target(for: action, current: windowEvent.previous, previous: previousEvent)
-        let targetScreen = action == .switchDisplay ? self.screens.screenAfter(screen) : screen
-        self.adjustTo(windowEvent.target, targetScreen)
-        
-        if DEBUG {
-            print("Screens")
-            print("=======")
-            for s in self.screens.screens {
-                if screen == s {
-                    print("\t**Frame: \(s.frame), Visible Frame: \(s.visibleFrame))**")
-                } else {
-                    print("\tFrame: \(s.frame), Visible Frame: \(s.visibleFrame))")
-                }
-            }
-            print("Window")
-            print("\t", id)
-            print("\tRect:", self.rect())
-            print("\tNormalized Rect:", self.normalizedRect(in: screen))
-            print("\tTarget:", windowEvent.target)
-        }
-        
-        return windowEvent
+    /// Sheets, system dialogs and windows without a readable frame are left alone.
+    var isAdjustable: Bool {
+        return !self.isSheet() && !self.isSystemDialog() && !self.rect().isNull
     }
 
-    private func rect() -> CGRect {
+    func rect() -> CGRect {
         guard let position: CGPoint = getPosition(),
             let size: CGSize = getSize()
             else {
@@ -104,7 +66,7 @@ class Window {
                       height: rect.height / screenFrame.height)
     }
     
-    private func adjustTo(_ targetNormalizedRect: CGRect, _ screen: NSScreen) {
+    func adjust(to targetNormalizedRect: CGRect, on screen: NSScreen) {
         let originFrame = NSRectToCGRect(self.screens.originScreen.frame)
         let screenFrame = NSRectToCGRect(screen.visibleFrame)
 
