@@ -23,6 +23,7 @@
 		9824703F22B13FBC0037B409 /* ScreenDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9824703E22B13FBC0037B409 /* ScreenDetection.swift */; };
 		9824704122B186D00037B409 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9824704022B186D00037B409 /* WindowManager.swift */; };
 		98AA000000000000000000A1 /* MASShortcut in Frameworks */ = {isa = PBXBuildFile; productRef = 98AA000000000000000000A2 /* MASShortcut */; };
+		98AA0000000000000000B002 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AA0000000000000000B001 /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,7 @@
 		9824703C22B13C7E0037B409 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		9824703E22B13FBC0037B409 /* ScreenDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenDetection.swift; sourceTree = "<group>"; };
 		9824704022B186D00037B409 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		98AA0000000000000000B001 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				9824703622B0F3200037B409 /* WindowAction.swift */,
 				9824703822B0F37C0037B409 /* ShortcutManager.swift */,
 				9824703C22B13C7E0037B409 /* Window.swift */,
+				98AA0000000000000000B001 /* Layout.swift */,
 				9824703E22B13FBC0037B409 /* ScreenDetection.swift */,
 				9824704022B186D00037B409 /* WindowManager.swift */,
 				9824702E22AFA2E50037B409 /* AccessibilityAuthorization.swift */,
@@ -276,6 +279,7 @@
 			files = (
 				9824702F22AFA2E50037B409 /* AccessibilityAuthorization.swift in Sources */,
 				9824703D22B13C7E0037B409 /* Window.swift in Sources */,
+				98AA0000000000000000B002 /* Layout.swift in Sources */,
 				9824703F22B13FBC0037B409 /* ScreenDetection.swift in Sources */,
 				9824703122AFA8470037B409 /* MosaicStatusItem.swift in Sources */,
 				9824704122B186D00037B409 /* WindowManager.swift in Sources */,
