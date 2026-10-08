@@ -4,8 +4,9 @@ class Screens {
     let screens: [NSScreen]
     let originScreen: NSScreen
     
-    static func detect() -> Screens {
-        return Screens(NSScreen.screens, NSScreen.screens[0])
+    static func detect() -> Screens? {
+        guard let originScreen = NSScreen.screens.first else { return nil }
+        return Screens(NSScreen.screens, originScreen)
     }
     
     init(_ screens: [NSScreen], _ originScreen: NSScreen) {
@@ -18,11 +19,10 @@ class Screens {
     }
    
     func screenAfter(_ screen: NSScreen) -> NSScreen{
-        let i = screens.firstIndex(of: screen)! + 1
-        if i >= screens.count {
+        guard let index = screens.firstIndex(of: screen), index + 1 < screens.count else {
             return screens[0]
         }
-        return screens[i]
+        return screens[index + 1]
     }
     
     private func percentageOf(_ window: Window, withinScreen screen: NSScreen) -> CGFloat {

@@ -50,20 +50,21 @@ class Window {
     private let underlyingElement: AXUIElement
     private let screens: Screens
     
-    required init(_ axUIElement: AXUIElement) {
+    required init(_ axUIElement: AXUIElement, screens: Screens) {
         self.underlyingElement = axUIElement
-        self.screens = Screens.detect()
+        self.screens = screens
     }
     
     static func frontmostWindow() -> Window? {
-        guard let frontmostApplication: NSRunningApplication = NSWorkspace.shared.frontmostApplication else { return nil }
+        guard let frontmostApplication: NSRunningApplication = NSWorkspace.shared.frontmostApplication,
+            let screens = Screens.detect() else { return nil }
         let axApplication = AXUIElementCreateApplication(frontmostApplication.processIdentifier)
         let focusedAttr = NSAccessibility.Attribute.focusedWindow as CFString
         var copiedUnderlyingElement: AnyObject?
         let result: AXError = AXUIElementCopyAttributeValue(axApplication, focusedAttr, &copiedUnderlyingElement)
         if result == .success {
             if let copiedUnderlyingElement = copiedUnderlyingElement {
-                return Window(copiedUnderlyingElement as! AXUIElement)
+                return Window(copiedUnderlyingElement as! AXUIElement, screens: screens)
             }
         }
         
