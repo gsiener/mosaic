@@ -19,8 +19,6 @@ class MosaicStatusItem {
     }
     
     public func openMenu() {
-        if let menu = statusMenu {
-            NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength).popUpMenu(menu)
-        }
+        nsStatusItem?.button?.performClick(nil)
     }
 }
