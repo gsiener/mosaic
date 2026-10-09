@@ -28,6 +28,20 @@ func cycle<T:ThresholdComparable>(through cycle:[T], current:T) -> T {
     return cycle[winningIndex]
 }
 
+typealias WindowId = Int
+
+struct WindowEvent : CustomStringConvertible {
+    var id: WindowId
+    var previous: CGRect = CGRect.zero
+    var target: CGRect = CGRect.zero
+    
+    var description: String {
+        get {
+            return "\(id): Previous: \(previous) Target: \(target)"
+        }
+    }
+}
+
 /// Decides where a window should go for an action. Pure: works entirely in
 /// normalized coordinates, where (0,0)-(1,1) spans a screen's visible frame
 /// with y growing downward. Applying the result to a real window is Window's job.

@@ -2,20 +2,6 @@ import Foundation
 import Carbon
 import Cocoa
 
-typealias WindowId = Int
-
-struct WindowEvent : CustomStringConvertible {
-    var id: WindowId
-    var previous: CGRect = CGRect.zero
-    var target: CGRect = CGRect.zero
-    
-    var description: String {
-        get {
-            return "\(id): Previous: \(previous) Target: \(target)"
-        }
-    }
-}
-
 class Window {
     private let underlyingElement: AXUIElement
     private let screens: Screens
